@@ -1,0 +1,5 @@
+alias nb='grep -v bower_components'
+alias nog='grep -v "~"'
+
+# Bonusbox aliases
+#alias bb='_bb_wrapper'

@@ -1,0 +1,48 @@
+# -*- mode: shell-script -*-
+
+# basic setup of my machine
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export TERM=xterm-256color
+export GITHUB_LOGIN="patriciagarcia"
+export EDITOR="vim"
+
+# link dotfiles from my project to the root of my machine if they're
+# not present. So files are always in place.
+for config in tmux.conf gemrc gitconfig vimrc; do
+    [ ! -f $HOME/.$config ] && ln -s $DOTFILES_DIR/$config $HOME/.$config
+done
+[ ! -d $HOME/bin ] && ln -s $DOTFILES_DIR/bin $HOME/bin
+
+# prioritize homebrew installed bins
+export PATH=/usr/local/sbin:$PATH
+
+### Ruby
+# For rvm:
+## Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# For rbenv:
+#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+### For virtualenvwrapper
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+### Bonusbox stuff
+# go
+#export GOPATH=$HOME/.gocode
+#mkdir -p $GOPATH/bin
+#export PATH=$HOME/.gocode/bin:$PATH
+#echo "1.1.1" > $HOME/.go-version
+#export CHGO_ROOT=$DOTFILES_DIR/chgo
+#[ -f $CHGO_ROOT/share/chgo/chgo.sh ] && source $CHGO_ROOT/share/chgo/chgo.sh
+
+#eval "$(/Users/pat/projects/bonusbox/bb/bin/bb init -)"
+##/ End of Bonusbox stuff
+
+### Liveblog stuff
+#export PYTHONPATH=$PYTHONPATH:~/Envs/liveblog/bin/python
+##/ End of Liveblog stuff

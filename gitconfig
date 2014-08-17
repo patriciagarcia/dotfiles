@@ -1,0 +1,41 @@
+[user]
+	name = Patricia Garcia
+	email = pat@patriciagarcia.me
+[credential]
+	helper = osxkeychain
+[core]
+        excludesfile = ~/.gitignore
+        pager = "/usr/bin/less -RciqMSj5"
+        editor = vim
+	autocrlf = input
+[merge]
+        tool = vimdiff
+[color]
+        diff = auto
+        branch = auto
+        status = auto
+        interactive = auto
+[diff]
+        renames = true
+[alias]
+        st = status
+        d = diff
+        ci = commit -v
+        cia = commit -v -a
+        co = checkout
+        cp = cherry-pick
+        l = log
+        ll = log -p
+        lt = log trunk..
+        llt = log -p trunk..
+        lm = log master..
+        llm = log -p master..
+        b = branch
+	plog = "log --pretty=\"%Cgreen%h%Creset – %Cred%ci%Creset – %s (%Cred%an%Creset)\""
+	slog = "log --pretty=\"%Cgreen%h%Creset – %Cred%ci%Creset – %s (%Cred%an%Creset)\" HEAD~15..HEAD"
+        undo = reset --soft HEAD^
+        f = fetch upstream
+        r = rebase upstream/master
+        pi = stash apply --index stash@{0}
+[push]
+	default = simple
