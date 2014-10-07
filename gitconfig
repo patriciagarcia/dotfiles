@@ -36,6 +36,10 @@
         undo = reset --soft HEAD^
         f = fetch upstream
         r = rebase upstream/master
+        rd = rebase upstream/develop
         pi = stash apply --index stash@{0}
+	unstage = reset HEAD --
+	last = log -1 HEAD
+        ;addup = git remote add upstream
 [push]
 	default = simple
