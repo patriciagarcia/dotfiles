@@ -16,6 +16,8 @@ done
 # prioritize homebrew installed bins
 export PATH=/usr/local/sbin:$PATH
 
+source $DOTFILES_DIR/bash/git-completion.bash
+
 ### Ruby
 # For rvm:
 ## Load RVM into a shell session *as a function*
