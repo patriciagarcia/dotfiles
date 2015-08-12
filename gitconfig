@@ -4,7 +4,7 @@
 [credential]
 	helper = osxkeychain
 [core]
-        excludesfile = ~/.gitignore
+	excludesfile = /Users/pat/.gitignore
         pager = "/usr/bin/less -RciqMSj5"
         editor = vim
 	autocrlf = input
@@ -40,6 +40,22 @@
         pi = stash apply --index stash@{0}
 	unstage = reset HEAD --
 	last = log -1 HEAD
-        ;addup = git remote add upstream
+        addup = git remote add upstream
+        pre = !git fetch origin && git co develop && git rebase origin/develop && git co -b
+        hot = !git fetch origin && git co master && git rebase origin/master && git co -b
+        prep = !git fetch origin && git rebase origin/master
+        rel = !git fetch origin && git co master && git rebase origin/master && git merge
+        up = push origin
+        end = push :
 [push]
 	default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f

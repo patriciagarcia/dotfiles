@@ -21,10 +21,10 @@ source $DOTFILES_DIR/bash/git-completion.bash
 ### Ruby
 # For rvm:
 ## Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # For rbenv:
-#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ### For virtualenvwrapper
 export WORKON_HOME=~/Envs
@@ -32,6 +32,15 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+### Sense followup app (Android environment)
+export ANDROID_HOME=~/Development/android-sdk-macosx
+export PATH=${PATH}:${ANDROID_HOME}/bin
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
+### hub command line tool
+eval "$(hub alias -s)"
 
 ### Bonusbox stuff
 # go

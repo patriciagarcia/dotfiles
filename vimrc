@@ -55,8 +55,8 @@ augroup myfiletypes
   autocmd FileType ruby,eruby,yaml,coffee set ai sw=2 sts=2 ts=2 et enc=utf8
   "autocmd FileType html,xhtml,css,dust,svg,xml,php,eruby set ai sw=3 sts=3 ts=3 et enc=utf8
   autocmd FileType html,xhtml,css,dust,svg,xml,php,eruby set ai sw=2 sts=2 ts=2 et enc=utf8
-  autocmd FileType javascript set ai sw=2 sts=2 ts=2 et enc=utf8
   "autocmd FileType html,xhtml,css,dust,svg,xml,php,eruby set ai sw=4 sts=4 ts=4 et enc=utf8
+  autocmd FileType javascript set ai sw=2 sts=2 ts=2 et enc=utf8
   "autocmd FileType javascript set ai sw=4 sts=4 ts=4 et enc=utf8
   autocmd FileType dust set ai sw=4 sts=4 ts=4 et enc=utf8
   autocmd FileType html,xhtml,xml,xsl,svg,eruby,php source ~/.vim/bundle/closetag/scripts/closetag.vim
@@ -120,6 +120,15 @@ colorscheme wombat
 set nofoldenable
 
 let g:syntastic_javascript_checkers = ['jscs']
+" Syntastic options, most of them because of angular.js
+let g:syntastic_html_tidy_ignore_errors = [
+    \ '<html> proprietary attribute "class"',
+    \ '<form> lacks "action" attribute',
+    \ ' proprietary attribute "ng-',
+    \ 'is not recognized!',
+    \ 'discarding unexpected',
+    \ '<img> lacks "src" attribute'
+    \ ]
 inoremap jj <ESC>
 
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
