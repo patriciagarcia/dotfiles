@@ -46,3 +46,5 @@ eval "$(hub alias -s)"
 export NVM_DIR="/Users/pat/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+### grunt
+export PATH=/usr/local/share/npm/lib/node_modules/grunt-cli/bin:$PATH
