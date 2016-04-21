@@ -42,18 +42,3 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 ### hub command line tool
 eval "$(hub alias -s)"
 
-### Bonusbox stuff
-# go
-#export GOPATH=$HOME/.gocode
-#mkdir -p $GOPATH/bin
-#export PATH=$HOME/.gocode/bin:$PATH
-#echo "1.1.1" > $HOME/.go-version
-#export CHGO_ROOT=$DOTFILES_DIR/chgo
-#[ -f $CHGO_ROOT/share/chgo/chgo.sh ] && source $CHGO_ROOT/share/chgo/chgo.sh
-
-#eval "$(/Users/pat/projects/bonusbox/bb/bin/bb init -)"
-##/ End of Bonusbox stuff
-
-### Liveblog stuff
-#export PYTHONPATH=$PYTHONPATH:~/Envs/liveblog/bin/python
-##/ End of Liveblog stuff
