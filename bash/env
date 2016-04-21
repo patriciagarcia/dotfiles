@@ -42,3 +42,7 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 ### hub command line tool
 eval "$(hub alias -s)"
 
+### nvm
+export NVM_DIR="/Users/pat/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
