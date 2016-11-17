@@ -119,16 +119,19 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 colorscheme wombat
 set nofoldenable
 
-let g:syntastic_javascript_checkers = ['jscs']
-" Syntastic options, most of them because of angular.js
-let g:syntastic_html_tidy_ignore_errors = [
-    \ '<html> proprietary attribute "class"',
-    \ '<form> lacks "action" attribute',
-    \ ' proprietary attribute "ng-',
-    \ 'is not recognized!',
-    \ 'discarding unexpected',
-    \ '<img> lacks "src" attribute'
-    \ ]
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" For using syntastic with standard
+let g:syntastic_javascript_checkers = ['standard']
+" End syntastic with standard
+
 inoremap jj <ESC>
 
 au BufRead,BufNewFile *.handlebars,*.hbs set ft=html syntax=handlebars
