@@ -33,12 +33,6 @@ source /usr/local/bin/virtualenvwrapper.sh
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-### Sense followup app (Android environment)
-export ANDROID_HOME=~/Development/android-sdk-macosx
-export PATH=${PATH}:${ANDROID_HOME}/bin
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools
-
 ### hub command line tool
 eval "$(hub alias -s)"
 
