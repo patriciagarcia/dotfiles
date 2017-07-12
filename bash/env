@@ -50,3 +50,6 @@ export PATH="$PATH:`yarn global bin`"
 
 ### grunt
 export PATH=/usr/local/share/npm/lib/node_modules/grunt-cli/bin:$PATH
+
+### Python
+export PATH=~/Library/Python/2.7/bin:$PATH
