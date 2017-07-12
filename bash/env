@@ -45,5 +45,8 @@ export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
+### Yarn
+export PATH="$PATH:`yarn global bin`"
+
 ### grunt
 export PATH=/usr/local/share/npm/lib/node_modules/grunt-cli/bin:$PATH
