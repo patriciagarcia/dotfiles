@@ -1,8 +1,4 @@
-alias nb='grep -v bower_components'
-alias nog='grep -v "~"'
+alias nog='grep -v "~" | grep -v Binary'
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias http="python -m SimpleHTTPServer"
-alias branches="for i in * ; do echo $i ':' $(git -C $i symbolic-ref --short HEAD) ; done"
-alias sh='adb shell input keyevent 82'
-alias emu='/Users/pat/Library/Android/sdk/tools/emulator -avd Nexus_5X_API_23'
