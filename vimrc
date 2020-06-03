@@ -24,7 +24,7 @@ set incsearch                             " do incremental searching
 set backspace=indent,eol,start            " allow backspacing over everything in insert mode
 if has("gui_macvim")
    win 160 55
-   set guifont=DejaVu\ Sans\ Mono:h14
+   set guifont=DejaVu\ Sans\ Mono:h18
 endif
 set nocompatible                          " use vim not vi
 
